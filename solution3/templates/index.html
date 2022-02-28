@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+    <div class="carousel-item active">
+    <img src="static/img/marss1.png" class="d-block w-100" alt="...">
+    </div>
+    {% for i in list_mars %}
+    <div class="carousel-item">
+        <img src="{{ i }}"  class="d-block w-100" alt="...">
+    </div>
+    {% endfor %}
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+</button>
+    </div>
+    </div>
+<div>
+    <form class="login_form" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="photo">Приложите фотографию</label>
+            <input type="file" class="form-control-file" id="photo" name="file">
+        </div>
+        <button type="submit" class="btn btn-primary">Отправить</button>
+    </form>
+</div>
+{% endblock %}
